@@ -1,17 +1,16 @@
-### TO RUN THIS: FLASK_APP=twitoff flask run ###
+"""Main application for twitoff"""
+#imports
+from flask import Flask
+from .models import DB
 
-# import flask package. flask makes app objects
-from flask import Flask, render_template
-
-# create Flask web server, makes the application
 def create_app():
-    """Create and configure an instance of the flask application."""
+    """create and configures an instance of a flask app"""
     app = Flask(__name__)
 
-# routes determine location
-# Routing to home
-    @app.route('/')
-    def home():
-        return render_template('home.html')
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+    DB.init_app(app)
 
+    @app.route('/')
+    def root():
+        return "Welcome to our app"
     return app
