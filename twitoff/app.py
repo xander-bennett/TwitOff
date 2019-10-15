@@ -1,6 +1,6 @@
 """Main application for twitoff"""
 #imports
-from flask import Flask
+from flask import Flask, render_template
 from .models import DB
 
 def create_app():
@@ -13,5 +13,10 @@ def create_app():
 
     @app.route('/')
     def root():
-        return "Welcome to our app"
+        return render_template('home.html')
+
+    @app.route("/about")
+    def preds():
+        return render_template('about.html')
+
     return app
