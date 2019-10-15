@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> TwitOff! {{ title }} </title>
+  <!-- we added a title here -->
+  </head>
+
+  <body>
+    <h1> TwitOff app </h1>
+    <p> Placeholder for content<p>
+
+    <ul>
+      {% for user in users%}
+      <li>{{ user.name }} </li>
+      {% endfor %}
+
+  </body>
+
+  <footer>
+  </footer>
+
+</html>
