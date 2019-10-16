@@ -31,4 +31,11 @@ def create_app():
     def preds():
         return render_template('about.html')
 
+    # @app.route('/user', methods=['POST'])
+    # @app.route('/user/<name>/', methods=['GET'])
+    # def user(name=None):
+    #     name = name or request.values['user_name']
+    #     tweets = User.query.filter(User.name == name).one().tweets
+    #     return render_template('user.html', name=name, tweets=tweets)
+
     return app
