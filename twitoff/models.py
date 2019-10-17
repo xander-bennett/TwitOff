@@ -22,4 +22,4 @@ class Tweet(DB.Model):
     user = DB.relationship('User', backref=DB.backref('tweets', lazy=True))
 
     def __repr__(self):
-        return '<Tweet {}>'.format(self.text)
+        return '<Tweet {}>'.format(self.text) 
