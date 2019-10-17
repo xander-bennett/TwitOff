@@ -8,18 +8,13 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-sqlalchemy = "*"
-basilica = "*"
 tweepy = "*"
+basilica = "*"
 python-decouple = "*"
-sci-kitlearn = "*"
 python-dotenv = "*"
-sci-kit = "*"
-learn = "*"
-sklearn = "*"
 scikit-learn = "*"
-numpy = "*"
 gunicorn = "*"
-psycopg2 = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
