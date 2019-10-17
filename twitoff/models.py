@@ -1,14 +1,13 @@
-"""SQLALchemy models for Twitoff"""
+"""SQLAlchemy models for Twitoff."""
 
 from flask_sqlalchemy import SQLAlchemy
 
 DB = SQLAlchemy()
 
 class User(DB.Model):
-    """Twitter users that we pull and analyze"""
+    """Twitter Users that we pull and analyze tweets for."""
     id = DB.Column(DB.BigInteger, primary_key=True)
     name = DB.Column(DB.String(15), nullable=False)
-
     newest_tweet_id = DB.Column(DB.BigInteger)
 
     def __repr__(self):
@@ -17,10 +16,10 @@ class User(DB.Model):
 class Tweet(DB.Model):
     """Tweets"""
     id = DB.Column(DB.BigInteger, primary_key=True)
-    text = DB.Column(DB.Unicode(300))
+    text = DB.Column(DB.Unicode(500))
     embedding = DB.Column(DB.PickleType, nullable=False)
     user_id = DB.Column(DB.BigInteger, DB.ForeignKey('user.id'), nullable=False)
     user = DB.relationship('User', backref=DB.backref('tweets', lazy=True))
 
     def __repr__(self):
-	       return '<Tweet {}>'.format(self.text)
+        return '<Tweet {}>'.format(self.text)

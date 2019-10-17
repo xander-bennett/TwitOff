@@ -15,12 +15,13 @@ def add_or_update_user(username):
     try:
         #get user info from tweepy API
         twitter_user = TWITTER.get_user(username)
-        #do a DB query to see if the twitter user already exists
-        db_user = (User.query.get(twitter_user.id) or User(id=twitter_user.id, name=username))
+        #DB query to see if the twitter user already exists
+        db_user = (User.query.get(twitter_user.id) or
+                   User(id=twitter_user.id, name=username))
         DB.session.add(db_user)
-        #we want as many recent non-retweet/reply statuses as we can get
+        #filtering out non-retweet, non-reply tweets
         #since_id will pull in the most recent tweet ID we have on file
-        #this allows us to only pull in new tweets.
+        #only new tweets will be pulled in
         tweets = twitter_user.timeline(
             count=200, exclude_replies=True, include_rts=False, tweet_mode='extended',
             since_id=db_user.newest_tweet_id)

@@ -8,8 +8,8 @@ def create_app():
     """Create and configure an instance of the Flask Application"""
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URL')
-    app.config['ENV'] = config('ENV')
-    app.config['DEBUG'] = config('FLASK_DEBUG')
+    app.config['FLASK_ENV'] = config('FLASK_ENV')
+    # app.config['DEBUG'] = config('FLASK_DEBUG') #used for debugging in the build stage
     DB.init_app(app)
 
     @app.route('/')
@@ -31,6 +31,7 @@ def create_app():
     @app.route('/user/<name>/', methods=['GET'])
     def user(name=None, message=''):
         name = (name or request.values['user_name'])
+        # import pdb; pdb.set_trace()
         try:
             if request.method =='POST':
                 add_or_update_user(name)

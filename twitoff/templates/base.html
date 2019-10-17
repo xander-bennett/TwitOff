@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title> Twitoff!!!! {{ title }} </title>
+  <title> Twitoff!! {{ title }} </title>
   </head>
 ​
   <body>
     <h1> Twitoff app </h1>
-  <!-- we're putting in a block here! -->
+  <!-- CSS, keywords, and metadata goes here-->
     {% block content %}
-    <form action="/user" methods="post">
+    <form action="/user" method="post">
       <input type="text" name="user_name" placeholder="User to add">
       <input type="submit" value="Add User">
     </form>
