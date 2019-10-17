@@ -8,8 +8,7 @@ def create_app():
     """Create and configure an instance of the Flask Application"""
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URL')
-    app.config['ENV'] = config('ENV')
-    app.config['DEBUG'] = config('FLASK_DEBUG')
+    app.config['FLASK_ENV'] = config('FLASK_ENV')
     DB.init_app(app)
 
     @app.route('/')
