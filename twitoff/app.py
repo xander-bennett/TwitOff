@@ -9,7 +9,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URL')
     app.config['FLASK_ENV'] = config('FLASK_ENV')
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     DB.init_app(app)
 
     @app.route('/')
