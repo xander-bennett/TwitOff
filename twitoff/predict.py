@@ -1,4 +1,3 @@
-Learn more or give us feedback
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from .models import User
