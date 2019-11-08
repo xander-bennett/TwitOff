@@ -6,18 +6,18 @@
   </head>
   <body>
     <nav>
-      <a href="/" class="brand"><span>TwitOff!</span></a>
+      <a href="/" class="brand"><span>We have TwitOff!</span></a>
 ​
       <!-- responsive-->
       <input id="bmenub" type="checkbox" class="show">
       <label for="bmenub" class="burger pseudo button">Menu</label>
-​      <!-- The update tweets button-->
+​
       <div class="menu">
         <a href="/update" class="button warning">Update Tweets</a>
       </div>
     </nav>
-​     <!-- Comparing users-->
-    <article class="flex two" style="padding: 2em 1em;">
+​
+    <article class="flex two" style="padding: 3em 4em 3em 4em;">
       {% block content %}
       <div>
         <h1>{{ title }}</h1>
@@ -40,7 +40,7 @@
         <span class="stack">{{ comparison }}</span>
         {% endfor %}
       </div>
-      <div>
+      <div style="padding: 3em 4em 3em 4em;">
         <h2>Users</h2>
         {% for user in users %}
         <a href="/user/{{ user.name }}"><span class="stack">{{ user.name }}</span></a>
