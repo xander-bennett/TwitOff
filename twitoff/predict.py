@@ -3,6 +3,7 @@ from sklearn.linear_model import LogisticRegression
 from .models import User
 from .twitter import BASILICA
 
+# embedding and logistic regression
 def predict_user(user1_name, user2_name, tweet_text):
     """Determine and return which user is more likely to say a given Tweet."""
     user1 = User.query.filter(User.name ==user1_name).one()
