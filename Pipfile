@@ -19,6 +19,7 @@ birdisle = "*"
 python-dotenv = "*"
 dotenv = "*"
 decouple = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.7"
