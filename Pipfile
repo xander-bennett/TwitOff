@@ -20,6 +20,7 @@ python-dotenv = "*"
 dotenv = "*"
 decouple = "*"
 python-decouple = "*"
+os = "*"
 
 [requires]
 python_version = "3.7"
