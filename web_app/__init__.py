@@ -6,7 +6,9 @@ app=Flask(__name__)
 
 # routes determine location
 @app.route("/")
+def hello_world():
+    return 'Hello, world!'
 
-# #define simple function
-# def home():
-#     return render_template('home.html')
+@app.route("/about")
+def about():
+    return 'About page!'
