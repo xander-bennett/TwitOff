@@ -3,10 +3,11 @@ from flask import Blueprint
 home_routes = Blueprint("home_routes", __name__)
 
 @home_routes.route("/")
-def index():
-    x = 2 + 2
-    return f"Hello World! {x}"
+def hello_world():
+    print("YOU VISITED THE HOMEPAGE")
+    return "Hello, World!"
 
 @home_routes.route("/about")
 def about():
-    return "About me"
+    print("YOU VISITED THE ABOUT PAGE")
+    return "About Me (TODO)"
